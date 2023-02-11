@@ -10,24 +10,24 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.player-panel{
+.player-panel {
     display: flex;
     font-size: 32px;
     gap: 64px;
 }
 
-.player-panel img{
+.player-panel img {
     width: 60px;
     height: 60px;
 }
 
-.player-panel div{
+.player-panel div {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.player-inactive{
+.player-inactive {
     opacity: 0.5;
 }
 
@@ -44,7 +44,7 @@ td {
 }
 
 td:hover {
-    background-color:rgba(194, 250, 231, 0.8);
+    background-color: rgba(194, 250, 231, 0.8);
 }
 
 table {
@@ -89,9 +89,9 @@ tr td:last-child {
     display: none;
 }
 
-.horizontal-line{
+.horizontal-line {
     height: 10px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 415px;
     position: absolute;
     transform: scaleX(0.0);
@@ -99,20 +99,20 @@ tr td:last-child {
     z-index: 1;
 }
 
-.make-vertical{
+.make-vertical {
     transform: rotate(90deg) scaleX(0.0);
 
 }
 
-.diagonal-start{
+.diagonal-start {
     transform: rotate(45deg) scaleX(0.0);
 }
 
-.diagonal-end{
+.diagonal-end {
     transform: rotate(135deg) scaleX(0.0);
 }
 
-.game-over{
+.game-over {
     position: absolute;
     width: 100vw;
     max-height: 100vh;
@@ -120,17 +120,20 @@ tr td:last-child {
     animation: zoomIn 225ms ease-in-out;
 }
 
-@keyframes zoomIn{
-    from{
+@keyframes zoomIn {
+    from {
         opacity: 1;
-        transform: scale(0)}
-    to{
+        transform: scale(0)
+    }
+
+    to {
         opacity: 0;
-        transform: scale(1)}
+        transform: scale(1)
+    }
 }
 
-.restart-btn{
-    border: 1px solid rgba(0,0,0,0.5);
+.restart-btn {
+    border: 1px solid rgba(0, 0, 0, 0.5);
     background-color: #1C0B7F;
     width: 300px;
     height: 100px;
@@ -142,6 +145,6 @@ tr td:last-child {
     bottom: 15px;
 }
 
-.restart-btn:hover{
+.restart-btn:hover {
     background-color: #4127d8;
 }

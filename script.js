@@ -33,6 +33,32 @@ function draw() {
 }
 
 function checkForWin() {
+    checkFields();
+    if (winner) {
+        gameOver = true;
+        setTimeout(function () {
+            document.getElementById('game-over').classList.remove('d-none');
+            document.getElementById('restart-btn').classList.remove('d-none');
+        }, 1000);
+    }
+    loose();
+}
+
+function restart() {
+    window.location.reload();
+}
+
+function loose() {
+    if (fields[0] && fields[1] && fields[2] && fields[3] && fields[4] && fields[5] && fields[6] && fields[7] && fields[8]) {
+        gameOver = true;
+        setTimeout(function () {
+            document.getElementById('game-over').classList.remove('d-none');
+            document.getElementById('restart-btn').classList.remove('d-none');
+        }, 1);
+    }
+}
+
+function checkFields() {
     if (fields[0] == fields[1] && fields[1] == fields[2] && fields[0]) {
         winner = fields[0];
         document.getElementById('line-1').style.transform = 'scaleX(1)';
@@ -64,27 +90,5 @@ function checkForWin() {
     if (fields[2] == fields[4] && fields[4] == fields[6] && fields[2]) {
         winner = fields[2];
         document.getElementById('line-8').style.transform = 'rotate(135deg) scaleX(1)';
-    }
-    if (winner) {
-        gameOver = true;
-        setTimeout(function(){
-        document.getElementById('game-over').classList.remove('d-none');
-        document.getElementById('restart-btn').classList.remove('d-none');
-        }, 1000);
-    }
-    loose();
-}
-
-function restart(){
-    window.location.reload();
-}
-
-function loose(){
-    if(fields[0] && fields[1] && fields[2] && fields[3] && fields[4] && fields[5] && fields[6] && fields[7] && fields[8]){
-        gameOver = true;
-        setTimeout(function(){
-        document.getElementById('game-over').classList.remove('d-none');
-        document.getElementById('restart-btn').classList.remove('d-none');
-        }, 1);
     }
 }
