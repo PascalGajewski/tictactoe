@@ -1,10 +1,34 @@
 body {
     margin: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     max-height: 100vh;
     min-height: 100vh;
+    gap: 64px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.player-panel{
+    display: flex;
+    font-size: 32px;
+    gap: 64px;
+}
+
+.player-panel img{
+    width: 60px;
+    height: 60px;
+}
+
+.player-panel div{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.player-inactive{
+    opacity: 0.5;
 }
 
 tr {
@@ -63,4 +87,26 @@ tr td:last-child {
 
 .d-none {
     display: none;
+}
+
+.horizontal-line{
+    height: 10px;
+    background-color: rgba(0,0,0,0.5);
+    width: 415px;
+    position: absolute;
+    transform: scaleX(0.0);
+    transition: transform 225ms ease-in-out;
+}
+
+.make-vertical{
+    transform: rotate(90deg) scaleX(0.0);
+
+}
+
+.diagonal-start{
+    transform: rotate(45deg) scaleX(0.0);
+}
+
+.diagonal-end{
+    transform: rotate(135deg) scaleX(0.0);
 }
