@@ -1,9 +1,10 @@
 let fields = [];
 let winner = ``;
 let currentShape = `cross`;
+let gameOver = false;
 
 function fillShape(id) {
-    if (!fields[id]) {
+    if (!fields[id] && !gameOver) {
         if (currentShape == `cross`) {
             currentShape = `circle`;
             document.getElementById(`player2`).classList.remove(`player-inactive`);
@@ -63,5 +64,27 @@ function checkForWin() {
     if (fields[2] == fields[4] && fields[4] == fields[6] && fields[2]) {
         winner = fields[2];
         document.getElementById('line-8').style.transform = 'rotate(135deg) scaleX(1)';
+    }
+    if (winner) {
+        gameOver = true;
+        setTimeout(function(){
+        document.getElementById('game-over').classList.remove('d-none');
+        document.getElementById('restart-btn').classList.remove('d-none');
+        }, 1000);
+    }
+    loose();
+}
+
+function restart(){
+    window.location.reload();
+}
+
+function loose(){
+    if(fields[0] && fields[1] && fields[2] && fields[3] && fields[4] && fields[5] && fields[6] && fields[7] && fields[8]){
+        gameOver = true;
+        setTimeout(function(){
+        document.getElementById('game-over').classList.remove('d-none');
+        document.getElementById('restart-btn').classList.remove('d-none');
+        }, 1);
     }
 }
